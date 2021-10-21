@@ -42,15 +42,15 @@ To use the new template:
 4. Deploy our new empty projct to Heroku
 
 ### Install Django and the supporting libraries
-> pip3 install django gunicorn
-> pip3 install dj_database_url psycopg2
-> pip3 install dj3-cloudinary-storage
-> pip3 freeze --local > requirements.txt
+> pip3 install django gunicorn<br>
+> pip3 install dj_database_url psycopg2<br>
+> pip3 install dj3-cloudinary-storage<br>
+> pip3 freeze --local > requirements.txt<br>
 
 ### Create a new blank django project and app
-> django-admin startproject {project_name} .
-> python3 manage.py startapp blog
-Now we need to add the newly created 'blog' app to the list of installed apps in settings.py
+> django-admin startproject {project_name} .<br>
+> python3 manage.py startapp blog<br>
+Now we need to add the newly created 'blog' app to the list of installed apps in settings.py<br>
 1. Navigate to settings.py
 2. At the end of the INSTALLED_APPS list, add "'blog',"
 3. Make migrations:
