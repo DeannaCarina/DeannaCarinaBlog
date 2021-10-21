@@ -49,8 +49,9 @@ To use the new template:
 
 ### Create a new blank django project and app
 > django-admin startproject {project_name} .<br>
-> python3 manage.py startapp blog<br>
-Now we need to add the newly created 'blog' app to the list of installed apps in settings.py<br>
+> python3 manage.py startapp blog
+
+Now we need to add the newly created 'blog' app to the list of installed apps in settings.py
 1. Navigate to settings.py
 2. At the end of the INSTALLED_APPS list, add "'blog',"
 3. Make migrations:
