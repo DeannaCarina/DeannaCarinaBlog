@@ -34,5 +34,24 @@ To use the new template:
         <li>Approve comments: As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments</li>
     </ol>
 3. When the title and main body have been filled, click on 'Projects' on the right hand side and select the prjoct to link the issue to.
-  
-    
+
+## New Project Checklist
+1. Install Django and the supporting libraries
+2. Create a new blank django project and app
+3. Set ou project to use PostgreSQL and Clouinary
+4. Deploy our new empty projct to Heroku
+
+### Install Django and the supporting libraries
+> pip3 install django gunicorn
+> pip3 install dj_database_url psycopg2
+> pip3 install dj3-cloudinary-storage
+> pip3 freeze --local > requirements.txt
+
+### Create a new blank django project and app
+> django-admin startproject {project_name} .
+> python3 manage.py startapp blog
+Now we need to add the newly created 'blog' app to the list of installed apps in settings.py
+1. Navigate to settings.py
+2. At the end of the INSTALLED_APPS list, add "'blog',"
+3. Make migrations:
+> python3 manage.py migrate
