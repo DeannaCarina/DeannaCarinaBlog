@@ -21,17 +21,18 @@ Setting up a User Story Template on GitHub:
 To use the new template:
 1. Click on 'Issues' at the top of the page and select 'New Issue', then click 'get started' on the template you just created
 2. Add user stories to the template:
-<ol>
-    <li>View post list: As a Site User I can view a list of posts so that I can select one to read</li>
-    <li>Open a post: As a Site User I can click on a post so that I can read the full text</li>
-    <li>View likes: As a Site User / Admin I can view the number of likes on each post so that I can see which is the most popular or viral</li>
-    <li>View comments: As a Site User / Admin I can view comments on an individual post so that I can read the conversation</li>
-    <li>Account registration: As a Site User I can register an account so that I can comment and like</li>
-    <li>Comment on a post: As a Site User I can leave comments on a post so that I can be involved in the conversation</li>
-    <li>Like / Unlike: As a Site User I can like or unlike a post so that I can interact with the content</li>
-    <li>Manage posts: As a Site Admin I can create, read, update and delete posts so that I can manage my blog content</li>
-    <li>Create drafts: As a Site Admin I can create draft posts so that I can finish writing the content later</li>
-    <li>Approve comments: As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments</li>
-</ol>
-    
+    <ol>
+        <li>View post list: As a Site User I can view a list of posts so that I can select one to read</li>
+        <li>Open a post: As a Site User I can click on a post so that I can read the full text</li>
+        <li>View likes: As a Site User / Admin I can view the number of likes on each post so that I can see which is the most popular or viral</li>
+        <li>View comments: As a Site User / Admin I can view comments on an individual post so that I can read the conversation</li>
+        <li>Account registration: As a Site User I can register an account so that I can comment and like</li>
+        <li>Comment on a post: As a Site User I can leave comments on a post so that I can be involved in the conversation</li>
+        <li>Like / Unlike: As a Site User I can like or unlike a post so that I can interact with the content</li>
+        <li>Manage posts: As a Site Admin I can create, read, update and delete posts so that I can manage my blog content</li>
+        <li>Create drafts: As a Site Admin I can create draft posts so that I can finish writing the content later</li>
+        <li>Approve comments: As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments</li>
+    </ol>
+3. When the title and main body have been filled, click on 'Projects' on the right hand side and select the prjoct to link the issue to.
+  
     
