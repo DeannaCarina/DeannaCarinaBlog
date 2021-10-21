@@ -38,7 +38,7 @@ To use the new template:
 ## New Project Checklist
 1. Install Django and the supporting libraries
 2. Create a new blank django project and app
-3. Set ou project to use PostgreSQL and Clouinary
+3. Set our project to use PostgreSQL and Clouinary
 4. Deploy our new empty projct to Heroku
 
 ### Install Django and the supporting libraries
@@ -56,3 +56,50 @@ Now we need to add the newly created 'blog' app to the list of installed apps in
 2. At the end of the INSTALLED_APPS list, add "'blog',"
 3. Make migrations:
 > python3 manage.py migrate
+
+
+### Set up project to use PostgreSQL and Clouinary
+
+<strong>NOTE: If you get the error below during the steps to deployment:</strong>
+django.db.utils.OperationalError: FATAL: role "somerandomletters" does not exist<br>
+Run the following command in the terminal to fix it: "unset PGHOSTADDR"
+
+<strong>PostgreSQL</strong>
+
+1. Create a new app on Heroku
+2. In the resources tab, search for Postgres in the add-ons box
+3. Click on the settings tab and reveal config vars, copy the value of DATABASE_URL
+4. At the same level as requirements.txt create a file called 'env.py'
+5. Within the env.py, import os, and set up the DATABASE_URL and SECRET_KEY variables to match those in Heroku (generate a secret key from https://miniwebtool.com/django-secret-key-generator/)
+6. In settings.py, import os, import dj_database_url, and set an if statement to retrieve the env.py file 
+7. Remove the string in the SECRET_KEY variable and replace with os.environ.get('SECRET_KEY')
+8. Comment out the DATABASES section in settings.py
+9. Make mirgrations: python3 manage.py migrate
+
+<strong>Cloudinary</strong>
+
+1. Log in/Sign up to cloudinary and navigate to the dashboard
+2. Copy the API Environment Variable key to the clipbaord
+3. Make a new environ in env.py and copy in the URL (removing "CLOUDINARY_URL =" from the beginning)
+4. Paste the URL into the Heroku config vars as well
+5. In the Heroku config vars add: DISABLE_COLLECTSTATIC and set the value to '1'
+6. In the INSTALLED_APPS section above the static files string, add "cloudinary_storage" and above blog, add "cloudinary"
+7. Towards the bottom of settings.py in the static files section, add the following:
+    <ol>
+        <li>STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'</li>
+        <li>STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]</li>
+        <li>STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')</li>
+        <li>MEDIA_URL = '/media/'</li>
+        <li>DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'</li>
+    </ol>
+8. In the buildpaths section of settings.py add: TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+9. In the templates section of settings.py for the DIRS key, add the following value: [TEMPLATES_DIR]
+10. Add the heroku app into the ALLOWED_HOSTS section: {app_name}.herokuapp.com and add localhost so we can run it locally
+11. Create the following directories/folders in the top level (same as requirements.txt): media, static, templates
+12. Add a Procfile in the top level of the repository and add the following: web: gunicorn {project_name}.wsgi
+13. Deploy via heroku dashboard or via CLI
+
+
+
+
+
