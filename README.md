@@ -99,7 +99,16 @@ Run the following command in the terminal to fix it: "unset PGHOSTADDR"
 12. Add a Procfile in the top level of the repository and add the following: web: gunicorn {project_name}.wsgi
 13. Deploy via heroku dashboard or via CLI
 
+## Creating our database entity-relationship-diagrams
 
+<img src="readmeimages/posts.png"><br>
+<img src="readmeimages/comment.png">
 
+## Creating our database models
+
+1. In models.py, from django.contrib.auth.models import User, from cloudinary.models import CloudinaryField
+2. Create the classes needed to fulful all criteria of the ERDs (see models.py for code)
+3. python3 manage.py makemigrations
+4. python3 manage.py migrate
 
 
