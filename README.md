@@ -112,3 +112,25 @@ Run the following command in the terminal to fix it: "unset PGHOSTADDR"
 4. python3 manage.py migrate
 
 
+## Building the admin site
+
+> python3 manage.py createsuperuser
+> python3 manage.py runserver
+
+At the end of the URL in the web-browser type /admin and log in using the credentials created
+
+1. Open the admin.py file and at the top, from .models import Post
+2. Underneath the imports: @admin.register(Post)
+
+> pip3 install django-summernote
+UPDATE THE REQUIREMENTS.TXT FILE: pip3 freeze --local > requirements.txt
+
+Update the INSTALLED_APPS in settings.py with 'django_summernote'
+
+In urls.py update the django.url import with ', include'
+In admin.py, from django_summernote.admin import SummernoteModelAdmin
+
+See admin.py for code
+Add class for comment control in admin panel
+
+In the project panel on GitHub, move manage posts, approve comments and create drafts into the 'done collumn'.
