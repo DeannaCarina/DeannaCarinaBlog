@@ -134,3 +134,18 @@ See admin.py for code
 Add class for comment control in admin panel
 
 In the project panel on GitHub, move manage posts, approve comments and create drafts into the 'done collumn'.
+
+
+## View Creation Checklist
+
+In the project panel on GitHub, move view likes, site pagination and view post list into the 'In progress collumn'.
+
+1. Open up views.py
+2. from django.views import generic
+
+See views.py for code for class 
+Create templates from https://github.com/Code-Institute-Solutions/django-blog-starter-files
+Copy over style.css also. 
+
+## Creating our first view
+
