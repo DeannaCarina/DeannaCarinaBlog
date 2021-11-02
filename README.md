@@ -147,5 +147,10 @@ See views.py for code for class
 Create templates from https://github.com/Code-Institute-Solutions/django-blog-starter-files
 Copy over style.css also. 
 
+
 ## Creating our first view
+
+Create a file in the blog directory called 'urls.py'(blog dir)
+(see this file for code)
+Update the urlpatterns in urls.py(DeannaCarina dir)
 
