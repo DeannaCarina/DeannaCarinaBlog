@@ -157,9 +157,35 @@ Update the urlpatterns in urls.py(DeannaCarina dir)
 
 ## The Post Detail view
 
-In views.py update the django.views import with 'View' and django.shortcuts with 'get_object_or_404'
-Add the PostDetail class to the file (see code there)
-Put necessary placeholders into the post_detail.html file to be able to view content (see there for code)
-In urls.py(blog dir), add the new urlpattern 'path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),'
-Add the post detail URL into our index.html file,  
-In post_detail.html, add all necessary placeholders to populate the page (see there for code)
+1. In views.py update the django.views import with 'View' and django.shortcuts with 'get_object_or_404'
+2. Add the PostDetail class to the file (see code there)
+3. Put necessary placeholders into the post_detail.html file to be able to view content (see there for code)
+4. In urls.py(blog dir), add the new urlpattern 'path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),'
+5. Add the post detail URL into our index.html file,  
+6. In post_detail.html, add all necessary placeholders to populate the page (see there for code)
+
+
+## Authorisation
+
+1. pip3 install django-allauth
+2. pip3 freeze --local > requirements.txt
+3. In urls.py (DeannaCarina dir) in the urlpatterns list add: path('accounts/', include('allauth.urls')),
+4. In settings.py add: 'django.contrib.sites', 'allauth', 'allauth.account' and 'allauth.socialaccount' to installed apps
+5. Below the INSTALLED_APPS variable, add a 'SITE_ID' variable with value of 1.
+6. Below the SITE_ID variable add the redirect to home page for logged in/out users LOG{IN/OUT}_REDIRECT_URL = '/'
+7. python3 manage.py migrate
+8. python3 manage.py runserver (make sure logged out of admin panel)
+9. direct to /accounts/signup
+10. Wire up the logout button: Go into base.html and change the href in logout, register and login to redirect to relevant pages
+11. Test by signing up, loging out and loging back in.
+
+12. IN CLI: ls ../.pip-modules/lib (this is to check python version - whichever version it is, use that in the next command)
+13. IN CLI: cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates
+14. Navigate to account in the templates folder and go to login.html
+15. In the 'extends from' remove 'account/' so it just extends from base.html
+16. Delete from line 12 to line 31 as we don't need it for this project and remove the first endif
+17. Delete the forgot password anchor as we won't need it in this project
+18. See login.html for new code for layout and styling.
+19. Carry out same steps for logout.html and signup.html
+
+
