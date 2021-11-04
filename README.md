@@ -154,3 +154,12 @@ Create a file in the blog directory called 'urls.py'(blog dir)
 (see this file for code)
 Update the urlpatterns in urls.py(DeannaCarina dir)
 
+
+## The Post Detail view
+
+In views.py update the django.views import with 'View' and django.shortcuts with 'get_object_or_404'
+Add the PostDetail class to the file (see code there)
+Put necessary placeholders into the post_detail.html file to be able to view content (see there for code)
+In urls.py(blog dir), add the new urlpattern 'path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),'
+Add the post detail URL into our index.html file,  
+In post_detail.html, add all necessary placeholders to populate the page (see there for code)
