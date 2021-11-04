@@ -189,3 +189,33 @@ Update the urlpatterns in urls.py(DeannaCarina dir)
 19. Carry out same steps for logout.html and signup.html
 
 
+## Commenting
+
+1. pip3 install django-crispy-forms
+2. pip3 freeze --local > requirements.txt
+3. In settings.py add: 'crispy_forms' to installed apps
+4. Tell 'crispy' to use bootstrap classes for formatting with CRISPY_TEMPLATE_PACK = 'bootstrap4' under the login/out redirects
+5. In the blog dir, create a file called forms.py
+6. Add imports to file (see forms.py for code) and add the CommentForm class
+
+7. In views.py from .forms import CommentForm
+8. Add "comment_form": CommentForm() to the render of PostDetail class
+9. To get te form to display: go to post_detail.html
+10. Inside the block content add '{% load crispy_forms_tags %}'
+11. Add code for authorising comment (see there for code lines 83-98)
+12. Run the server - when attempting to comment, console should throw a POST 405 error
+
+13. In views.py, copy the whole 'get' def and paste underneat with same indentation, change 'get' to 'post'
+14. Before the template is return render, add in a new varibale called 'comment_form' and give it the value 'CommentForm(data=request.POST)'
+15. Below this varibale, check for form being valid (see there for code), add the if-else statement (see there for code)
+16. Add the "commented": False key-value to the get def.
+
+17. Refresh the server and it should say that there's a comment waiting approval.
+18. Log out of the page, go to admin panel and login in as admin, go into the comments section and tick the box next to the comment. Select from the drop down list to approve comments.
+19. Log out of admin and back in to new user - comment should now be visible!
+
+
+
+
+
+
