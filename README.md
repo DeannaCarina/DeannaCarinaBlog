@@ -238,3 +238,9 @@ Update the urlpatterns in urls.py(DeannaCarina dir)
 4. Within this add the code for generating the message, closing it automatically and adding a close button (lines60-72)
 5. Run the server to check
 6. Add script tags at the bottom of base.html and add the code for autodismissing the messages
+
+
+## Final Deployment
+
+1. In settings.py change debug to False
+2. Add the X_FRAME_OPTIONS variable and set the value to 'SAMEORIGIN'
