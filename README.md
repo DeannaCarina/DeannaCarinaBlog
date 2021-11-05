@@ -138,6 +138,11 @@ In the project panel on GitHub, move manage posts, approve comments and create d
 
 ## View Creation Checklist
 
+### New View Checklist!
+1. Create the view code
+2. Create a template to render the view
+3. Connect up our urls in urls.py
+
 In the project panel on GitHub, move view likes, site pagination and view post list into the 'In progress collumn'.
 
 1. Open up views.py
@@ -215,7 +220,16 @@ Update the urlpatterns in urls.py(DeannaCarina dir)
 19. Log out of admin and back in to new user - comment should now be visible!
 
 
+## Likes
+
+1. In views.py Create the class-based view called 'PostLike' which inherits from 'view' (see there for code)
+2. In views.py from from django.http import HttpResponseRedirect
+3. In views.py add reverse to the django.shortcuts imports
+4. In views.py within the new class-based view return 'HttpResponseRedirect(reverse('post_detail', args=[slug]))'
+5. In post_detail.html set up the code to allow authenticated users to like a post (see there for code lines 38-61)
+6. In urls.py (blog dir), connect up the url: 'path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),'
 
 
+## Messages
 
-
+1. 
