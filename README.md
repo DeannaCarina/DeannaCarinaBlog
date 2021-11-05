@@ -232,4 +232,9 @@ Update the urlpatterns in urls.py(DeannaCarina dir)
 
 ## Messages
 
-1. 
+1. In settings.py: from django.contrib.messages import constance as messages
+2. Below the login/out redirects add a variable called MESSAGE_TAGS = {} and see there for code that goes within.
+3. In base.html below the nav container, add a new row, collumn and offset. 
+4. Within this add the code for generating the message, closing it automatically and adding a close button (lines60-72)
+5. Run the server to check
+6. Add script tags at the bottom of base.html and add the code for autodismissing the messages
